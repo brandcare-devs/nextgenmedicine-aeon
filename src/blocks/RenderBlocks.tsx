@@ -73,6 +73,7 @@ const blockComponents = {
   allPressBlock: AllPressBlockComponent,
   ctaButtonBlock: CtaButtonBlockComponent,
   ctaBannerBlock: CtaBannerBlockComponent,
+  faqBlock: FAQBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{
