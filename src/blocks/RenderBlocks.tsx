@@ -36,6 +36,7 @@ import { ContactBlockComponent } from '@/blocks/ContactBlock/Component'
 import { AllPressBlock as AllPressBlockComponent } from '@/blocks/AllPressBlock'
 import { CtaButtonBlockComponent } from '@/blocks/CtaButtonBlock/Component'
 import { CtaBannerBlockComponent } from '@/blocks/CtaBannerBlock/Component'
+import { FAQBlockComponent } from '@/blocks/FAQBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
