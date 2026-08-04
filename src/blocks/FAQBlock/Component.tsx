@@ -1,22 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import { RichText } from '@payloadcms/richtext-lexical/react'
+import { useState } from 'react';
+import { RichText } from '@payloadcms/richtext-lexical/react';
 
-import type { Page } from '@/payload-types'
+import type { Page } from '@/payload-types';
 
-type FAQBlockProps = Extract
-  NonNullable<Page['layout']>[0],
-  { blockType: 'faqBlock' }
->
+type FAQBlockProps = Extract<NonNullable<Page['layout']>[0], { blockType: 'faqBlock' }>;
 
-export function FAQBlockComponent({
-  title,
-  subtitle,
-  description,
-  faqs,
-}: FAQBlockProps) {
-  const [open, setOpen] = useState<number | null>(0)
+export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlockProps) {
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section className="container py-20">
@@ -47,5 +39,5 @@ export function FAQBlockComponent({
         ))}
       </div>
     </section>
-  )
+  );
 }
