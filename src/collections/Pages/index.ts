@@ -105,7 +105,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [EventHero, StatsBlock, BentoGrid, HighlightsBlock, SpeakersBlock, SpeakerHighlightBlock, FullSpeakersBlock, ProgramBlock, PartnersBlock, PartnersGridBlock, PartnerCtaBlock, PromoBannerBlock, PressBlock, PageBannerBlock, GalleryBlock, EventHighlightsBlock, AboutBlock, EventAgendaBlock, AllPostsBlock, TextCardBlock, CallToAction, Content, MediaBlock, Archive, FormBlock, VenueHeroBlock, VenueBentoBlock, FullWidthImageBlock, LocationBlock, PartnerFormBlock, ContactBlock, AllPressBlock, CtaButtonBlock, CtaBannerBlock],
+              blocks: [EventHero, StatsBlock, BentoGrid, HighlightsBlock, SpeakersBlock, SpeakerHighlightBlock, FullSpeakersBlock, ProgramBlock, PartnersBlock, PartnersGridBlock, PartnerCtaBlock, PromoBannerBlock, PressBlock, PageBannerBlock, GalleryBlock, EventHighlightsBlock, AboutBlock, EventAgendaBlock, AllPostsBlock, TextCardBlock, CallToAction, Content, MediaBlock, Archive, FormBlock, FAQBlock, VenueHeroBlock, VenueBentoBlock, FullWidthImageBlock, LocationBlock, PartnerFormBlock, ContactBlock, AllPressBlock, CtaButtonBlock, CtaBannerBlock],
               required: true,
               localized: true,
               admin: {
