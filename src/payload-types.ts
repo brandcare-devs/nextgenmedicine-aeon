@@ -2947,6 +2947,26 @@ export interface CtaBannerBlockSelect<T extends boolean = true> {
   id?: T;
   blockName?: T;
 }
+
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlockType_select".
+ */
+export interface FAQBlockTypeSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        defaultOpen?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts_select".
