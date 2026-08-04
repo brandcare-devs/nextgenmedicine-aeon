@@ -2238,6 +2238,7 @@ export interface PagesSelect<T extends boolean = true> {
         allPressBlock?: T | AllPressBlockTypeSelect<T>;
         ctaButtonBlock?: T | CtaButtonBlockTypeSelect<T>;
         ctaBannerBlock?: T | CtaBannerBlockSelect<T>;
+        faqBlock?: T | FAQBlockTypeSelect<T>;
       };
   meta?:
     | T
