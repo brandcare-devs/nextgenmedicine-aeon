@@ -10,12 +10,12 @@ type FAQBlockProps = Extract
   { blockType: 'faqBlock' }
 >
 
-export const FAQBlockComponent: React.FC<FAQBlockProps> = ({
+export function FAQBlockComponent({
   title,
   subtitle,
   description,
   faqs,
-}) => {
+}: FAQBlockProps) {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
