@@ -133,12 +133,12 @@ export const PartnerFormBlockComponent: React.FC<Props> = ({
 
         if (!res.ok) throw new Error('Submission failed')
 
-        setModal({ open: true, isError: false })
         form.reset()
         setSelectedTypeId(types?.[0]?.value || '')
+        window.location.href = 'https://www.next-generationmedicine.com/en/thankyou'
+        return
       } catch {
         setModal({ open: true, isError: true })
-      } finally {
         setSubmitting(false)
       }
     },
@@ -306,14 +306,6 @@ export const PartnerFormBlockComponent: React.FC<Props> = ({
           </div>
         </form>
       </div>
-
-      {/* Success modal */}
-      <Modal
-        open={modal.open && !modal.isError}
-        onClose={() => setModal({ open: false, isError: false })}
-        title={successTitle || 'Thank you!'}
-        message={successMessage || 'Your partnership inquiry has been submitted.'}
-      />
 
       {/* Error modal */}
       <Modal
