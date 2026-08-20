@@ -104,11 +104,11 @@ export const ContactBlockComponent: React.FC<Props> = ({
 
       if (!res.ok) throw new Error('Submission failed')
 
-      setModal({ open: true, isError: false })
       form.reset()
+      window.location.href = 'https://www.next-generationmedicine.com/en/thankyou'
+      return
     } catch {
       setModal({ open: true, isError: true })
-    } finally {
       setSubmitting(false)
     }
   }, [])
@@ -238,12 +238,6 @@ export const ContactBlockComponent: React.FC<Props> = ({
         </form>
       </div>
 
-      <Modal
-        open={modal.open && !modal.isError}
-        onClose={() => setModal({ open: false, isError: false })}
-        title={successTitle || 'Thank you!'}
-        message={successMessage || "Your message has been received. We'll be in touch shortly."}
-      />
       <Modal
         open={modal.open && modal.isError}
         onClose={() => setModal({ open: false, isError: false })}
