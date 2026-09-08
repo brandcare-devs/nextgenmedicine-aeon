@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { createSubmissionNotificationHook } from '../../utilities/createSubmissionNotificationHook'
 
 export const NewsletterSubmissions: CollectionConfig = {
   slug: 'newsletter-submissions',
@@ -16,12 +17,13 @@ export const NewsletterSubmissions: CollectionConfig = {
     defaultColumns: ['email', 'createdAt'],
     useAsTitle: 'email',
   },
-  fields: [
-    {
-      name: 'email',
-      type: 'email',
-      required: true,
-      unique: true,
-    },
-  ],
+  hooks: {
+    afterChange: [
+      createSubmissionNotificationHook({
+        subject: 'New Newsletter Signup',
+        fields: [{ label: 'Email', key: 'email' }],
+      }),
+    ],
+  },
+  fields: [{ name: 'email', type: 'email', required: true, unique: true }],
 }

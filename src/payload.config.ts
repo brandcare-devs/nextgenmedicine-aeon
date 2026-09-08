@@ -1,4 +1,5 @@
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { migrations } from './migrations'
 import sharp from 'sharp'
 import path from 'path'
@@ -108,6 +109,11 @@ export default buildConfig({
       addRandomSuffix: true,
     }),
   ],
+  email: resendAdapter({
+    defaultFromAddress: 'noreply@next-generationmedicine.com',
+    defaultFromName: 'Next Generation Medicine',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
   globals: [Header, Footer, SiteSettings],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
