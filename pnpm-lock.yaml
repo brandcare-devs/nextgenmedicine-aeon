@@ -11,6 +11,9 @@ importers:
       '@payloadcms/db-vercel-postgres':
         specifier: 3.80.0
         version: 3.80.0(@types/pg@8.11.6)(payload@3.80.0(bufferutil@4.1.0)(graphql@16.13.2)(typescript@5.7.3)(utf-8-validate@6.0.6))
+      '@payloadcms/email-resend':
+        specifier: ^3.88.0
+        version: 3.88.0(payload@3.80.0(bufferutil@4.1.0)(graphql@16.13.2)(typescript@5.7.3)(utf-8-validate@6.0.6))
       '@payloadcms/live-preview-react':
         specifier: 3.80.0
         version: 3.80.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1448,6 +1451,12 @@ packages:
     resolution: {integrity: sha512-q47D8I+dZTaI9fMCMEQtpKbmDUDEp8MIMxg+0O0wxy8CUsxX3sHC3ChgcuHAztqDeBguMaag7OWuWmDoArhfBw==}
     peerDependencies:
       payload: 3.80.0
+
+  '@payloadcms/email-resend@3.88.0':
+    resolution: {integrity: sha512-0iuTVkzCY6vpHSHHlDegrAeHQLj7MrvfONGgwyXSy92vwTeQ57aWq2iR2xyHeenLGI3To4DJpKzU1ydVBPJK4Q==}
+    engines: {node: ^18.20.2 || >=20.9.0}
+    peerDependencies:
+      payload: 3.88.0
 
   '@payloadcms/graphql@3.80.0':
     resolution: {integrity: sha512-AlJcFI/R+4SRPWW51ny2BsIj+4j6qVxyn0W5Kz1f5MMfheuD844tc92O+IwmUsrRsb0l6zv3zI3G3M6V2WdFFQ==}
@@ -6286,6 +6295,10 @@ snapshots:
       - prisma
       - sql.js
       - sqlite3
+
+  '@payloadcms/email-resend@3.88.0(payload@3.80.0(bufferutil@4.1.0)(graphql@16.13.2)(typescript@5.7.3)(utf-8-validate@6.0.6))':
+    dependencies:
+      payload: 3.80.0(bufferutil@4.1.0)(graphql@16.13.2)(typescript@5.7.3)(utf-8-validate@6.0.6)
 
   '@payloadcms/graphql@3.80.0(graphql@16.13.2)(payload@3.80.0(bufferutil@4.1.0)(graphql@16.13.2)(typescript@5.7.3)(utf-8-validate@6.0.6))(typescript@5.7.3)':
     dependencies:
