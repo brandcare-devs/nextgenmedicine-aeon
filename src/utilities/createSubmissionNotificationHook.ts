@@ -5,7 +5,7 @@ type FieldConfig = {
   key: string
 }
 
-const NOTIFICATION_RECIPIENTS = ['usama@brandcaredigital.com']
+const NOTIFICATION_RECIPIENTS = ['events@theaeonclinic.com']
 
 export const createSubmissionNotificationHook = ({
   subject,
