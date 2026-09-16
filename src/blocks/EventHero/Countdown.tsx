@@ -46,9 +46,9 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       {labels.map((label, i) => (
         <div key={label} className="flex flex-col items-center gap-3">
           <span
-            className="text-[2.75rem] font-[200] leading-none tracking-[-0.04em] text-[#BC8D6C] tabular-nums"
-            suppressHydrationWarning
-          >
+  className="text-[38px] font-[200] leading-none tracking-[-0.04em] text-[#BC8D6C] tabular-nums"
+  suppressHydrationWarning
+>
             {String(values[i]).padStart(2, '0')}
           </span>
           <span className="text-[0.875rem] font-medium leading-[1.2] text-[#363332]">
