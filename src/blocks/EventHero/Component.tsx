@@ -194,7 +194,7 @@ export const EventHeroBlock: React.FC<Props> = (props) => {
                   {countdownLabel}
                 </p>
               )}
-              <div className={`flex items-center ${showCountdown ? 'flex-col md:flex-row justify-between gap-4' : 'justify-center'}`}>
+             <div className={`flex items-center ${showCountdown ? 'flex-col md:flex-row justify-center gap-6 md:gap-10' : 'justify-center'}`}>
                 {showCountdown && countdownDate && (
                   <Countdown targetDate={countdownDate} />
                 )}
