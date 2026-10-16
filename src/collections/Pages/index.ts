@@ -37,6 +37,7 @@ import { AllPressBlock } from '../../blocks/AllPressBlock/config'
 import { CtaButtonBlock } from '../../blocks/CtaButtonBlock/config'
 import { CtaBannerBlock } from '../../blocks/CtaBannerBlock/config'
 import { FAQBlock } from '../../blocks/FAQBlock/config'
+import { HtmlBlock } from '../../blocks/HtmlBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -105,7 +106,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [EventHero, StatsBlock, BentoGrid, HighlightsBlock, SpeakersBlock, SpeakerHighlightBlock, FullSpeakersBlock, ProgramBlock, PartnersBlock, PartnersGridBlock, PartnerCtaBlock, PromoBannerBlock, PressBlock, PageBannerBlock, GalleryBlock, EventHighlightsBlock, AboutBlock, EventAgendaBlock, AllPostsBlock, TextCardBlock, CallToAction, Content, MediaBlock, Archive, FormBlock, FAQBlock, VenueHeroBlock, VenueBentoBlock, FullWidthImageBlock, LocationBlock, PartnerFormBlock, ContactBlock, AllPressBlock, CtaButtonBlock, CtaBannerBlock],
+              blocks: [EventHero, StatsBlock, BentoGrid, HighlightsBlock, SpeakersBlock, SpeakerHighlightBlock, FullSpeakersBlock, ProgramBlock, PartnersBlock, PartnersGridBlock, PartnerCtaBlock, PromoBannerBlock, PressBlock, PageBannerBlock, GalleryBlock, EventHighlightsBlock, AboutBlock, EventAgendaBlock, AllPostsBlock, TextCardBlock, CallToAction, Content, MediaBlock, Archive, FormBlock, FAQBlock, VenueHeroBlock, VenueBentoBlock, FullWidthImageBlock, LocationBlock, PartnerFormBlock, ContactBlock, AllPressBlock, CtaButtonBlock, CtaBannerBlock, HtmlBlock],
               required: true,
               localized: true,
               admin: {

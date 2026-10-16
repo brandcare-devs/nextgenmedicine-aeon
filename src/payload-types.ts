@@ -245,6 +245,36 @@ export interface Page {
     | MediaBlock
     | ArchiveBlock
     | FormBlock
+    | {
+        title: string;
+        subtitle?: string | null;
+        description?: string | null;
+        faqs?:
+          | {
+              question: string;
+              answer: {
+                root: {
+                  type: string;
+                  children: {
+                    type: any;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              defaultOpen?: boolean | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'faqBlock';
+      }
     | VenueHeroBlockType
     | VenueBentoBlockType
     | FullWidthImageBlockType
@@ -254,6 +284,7 @@ export interface Page {
     | AllPressBlockType
     | CtaButtonBlockType
     | CtaBannerBlock
+    | HtmlBlockType
   )[];
   meta?: {
     title?: string | null;
@@ -1745,6 +1776,19 @@ export interface CtaBannerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HtmlBlockType".
+ */
+export interface HtmlBlockType {
+  /**
+   * Raw HTML rendered as-is on the page. Only paste code you trust.
+   */
+  html: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'htmlBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "press-articles".
  */
 export interface PressArticle {
@@ -1797,40 +1841,6 @@ export interface User {
   password?: string | null;
   collection: 'users';
 }
-
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "FAQBlockType".
- */
-export interface FAQBlockType {
-  title: string;
-  subtitle?: string | null;
-  description?: string | null;
-  faqs: {
-    question: string;
-    answer: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    };
-    defaultOpen?: boolean | null;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'faqBlock';
-}
-
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "partnership-submissions".
@@ -2229,6 +2239,23 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        faqBlock?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              description?: T;
+              faqs?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    defaultOpen?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
         venueHeroBlock?: T | VenueHeroBlockTypeSelect<T>;
         venueBentoBlock?: T | VenueBentoBlockTypeSelect<T>;
         fullWidthImageBlock?: T | FullWidthImageBlockTypeSelect<T>;
@@ -2238,7 +2265,7 @@ export interface PagesSelect<T extends boolean = true> {
         allPressBlock?: T | AllPressBlockTypeSelect<T>;
         ctaButtonBlock?: T | CtaButtonBlockTypeSelect<T>;
         ctaBannerBlock?: T | CtaBannerBlockSelect<T>;
-        faqBlock?: T | FAQBlockTypeSelect<T>;
+        htmlBlock?: T | HtmlBlockTypeSelect<T>;
       };
   meta?:
     | T
@@ -2947,23 +2974,12 @@ export interface CtaBannerBlockSelect<T extends boolean = true> {
   id?: T;
   blockName?: T;
 }
-
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "FAQBlockType_select".
+ * via the `definition` "HtmlBlockType_select".
  */
-export interface FAQBlockTypeSelect<T extends boolean = true> {
-  title?: T;
-  subtitle?: T;
-  description?: T;
-  faqs?:
-    | T
-    | {
-        question?: T;
-        answer?: T;
-        defaultOpen?: T;
-        id?: T;
-      };
+export interface HtmlBlockTypeSelect<T extends boolean = true> {
+  html?: T;
   id?: T;
   blockName?: T;
 }

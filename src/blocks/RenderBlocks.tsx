@@ -37,6 +37,7 @@ import { AllPressBlock as AllPressBlockComponent } from '@/blocks/AllPressBlock'
 import { CtaButtonBlockComponent } from '@/blocks/CtaButtonBlock/Component'
 import { CtaBannerBlockComponent } from '@/blocks/CtaBannerBlock/Component'
 import { FAQBlockComponent } from '@/blocks/FAQBlock/Component'
+import { HtmlBlockComponent } from '@/blocks/HtmlBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -74,6 +75,7 @@ const blockComponents = {
   ctaButtonBlock: CtaButtonBlockComponent,
   ctaBannerBlock: CtaBannerBlockComponent,
   faqBlock: FAQBlockComponent,
+  htmlBlock: HtmlBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{
