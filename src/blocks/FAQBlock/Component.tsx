@@ -3,11 +3,17 @@
 import { useState } from 'react';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
+<<<<<<< HEAD
 import type { Page } from '@/payload-types';
 
 type FAQBlockProps = Extract<NonNullable<Page['layout']>[number], { blockType: 'faqBlock' }>;
 
 export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlockProps) {
+=======
+import type { FAQBlock } from '@/payload-types';
+
+export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlock) {
+>>>>>>> a4e6cdaa8a1301d3c726a023221182b4636426d5
   const [open, setOpen] = useState<number | null>(0);
 
   return (
