@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
-import type { FAQBlockType } from '@/payload-types';
+import type { Page } from '@/payload-types';
 
-export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlockType) {
+type FAQBlockProps = Extract<NonNullable<Page['layout']>[number], { blockType: 'faqBlock' }>;
+
+export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlockProps) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -13,13 +15,9 @@ export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlo
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900">{title}</h2>
 
-        {subtitle && (
-          <p className="mt-3 text-lg text-neutral-600">{subtitle}</p>
-        )}
+        {subtitle && <p className="mt-3 text-lg text-neutral-600">{subtitle}</p>}
 
-        {description && (
-          <p className="mt-2 text-neutral-500">{description}</p>
-        )}
+        {description && <p className="mt-2 text-neutral-500">{description}</p>}
       </div>
 
       <div className="max-w-3xl mx-auto rounded-3xl bg-[#EFE7DF] p-4 sm:p-6">
@@ -27,12 +25,7 @@ export function FAQBlockComponent({ title, subtitle, description, faqs }: FAQBlo
           const isOpen = open === index;
 
           return (
-            <div
-              key={item.id ?? index}
-              className={`border-b border-neutral-300 last:border-b-0 ${
-                index === 0 ? '' : ''
-              }`}
-            >
+            <div key={item.id ?? index} className="border-b border-neutral-300 last:border-b-0">
               <button
                 onClick={() => setOpen(isOpen ? null : index)}
                 className="flex w-full items-center justify-between gap-4 py-6 text-left"
